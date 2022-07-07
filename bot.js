@@ -109,7 +109,7 @@ const SharpClient = class extends Client {
         this.WebSocketManager.connect(url, true)
             .then(party => {
                 party = party.toString();
-                
+
                 const link = `https://arras.io/#${name}${party}`;
                 if (!this.ServerManager.servers[name].parties.includes(`${COLOR_MAP[party.split('')[0]]} **https://arras.io/#${name}${party}**`)) {
                     console.log('New link found!', link);
@@ -307,11 +307,9 @@ client.on('interactionCreate', function(interaction) {
 
                         for (let i = p * 25; i < p * 25 + 25; i++) {
                             const score = scores[i];
-                            console.log(score, i);
                             if (!score) break;
 
                             const { playerInfo, info, name } = score;
-                            console.log(playerInfo, info, name);
 
                             const color = info.info.gamemode === 'ffa' ? '🤍' : (COLOR_MAP[playerInfo.color] || '?');
                             data[p].fields.push({
@@ -349,7 +347,6 @@ client.on('interactionCreate', function(interaction) {
                             if (!score) break;
 
                             const { playerInfo, info, name } = score;
-                            console.log(playerInfo, info, name);
 
                             const color = info.info.gamemode === 'ffa' ? '🤍' : (COLOR_MAP[playerInfo.color] || '?');
 
@@ -397,7 +394,6 @@ client.on('interactionCreate', function(interaction) {
                 let description = '';
                 for (let i = 0; i < 10; i++) {
                     const playerInfo = scoreboard[i];
-                    console.log(playerInfo);
                     if (!playerInfo) break;
 
                     const color = info.info.gamemode === 'ffa' ? '🤍' : (COLOR_MAP[playerInfo.color] || '?');
@@ -460,7 +456,6 @@ client.on('interactionCreate', function(interaction) {
                             if (!score) break;
 
                             const { playerInfo, info, name } = score;
-                            console.log(playerInfo, info, name);
 
                             const color = info.info.gamemode === 'ffa' ? '🤍' : (COLOR_MAP[playerInfo.color] || '?');
                             data[p].fields.push({
@@ -498,7 +493,6 @@ client.on('interactionCreate', function(interaction) {
                             if (!score) break;
 
                             const { playerInfo, info, name } = score;
-                            console.log(playerInfo, info, name);
 
                             const color = info.info.gamemode === 'ffa' ? '🤍' : (COLOR_MAP[playerInfo.color] || '?');
 
